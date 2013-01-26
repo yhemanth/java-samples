@@ -1,5 +1,6 @@
 package com.thoughtworks.spikes;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
@@ -12,9 +13,25 @@ public class MemoryMappedFileReader implements MemoryMappedFileConstants {
     }
 
     private void readLargeFile() throws IOException {
-        RandomAccessFile file = new RandomAccessFile(FILE_NAME, "r");
-        readRecords(file);
+
+        for (int i=0; i<10; i++) {
+            new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                RandomAccessFile file = null;
+                                try {
+                                    file = new RandomAccessFile(FILE_NAME, "r");
+                                    for (int j=0; j<10; j++)
+                                        readRecords(file);
+                                    file.close();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, "reader" + i).start();
+        }
     }
+
 
     private void readRecords(RandomAccessFile file) throws IOException {
         FileChannel channel = file.getChannel();
