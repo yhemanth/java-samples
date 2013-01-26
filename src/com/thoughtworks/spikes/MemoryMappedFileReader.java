@@ -25,10 +25,10 @@ public class MemoryMappedFileReader implements MemoryMappedFileConstants {
                     FileChannel.MapMode.READ_ONLY, startOffsetOfBlock, READ_BLOCK_SIZE);
             int numberOfRecords = READ_BLOCK_SIZE / SIZE_OF_RECORD;
             for (int j=0; j < numberOfRecords; j++) {
-                byte[] data = new byte[SIZE_OF_RECORD];
-                buffer.get(data, 0, SIZE_OF_RECORD);
+                Record record = Record.newFromBuffer(buffer);
             }
             startOffsetOfBlock += READ_BLOCK_SIZE;
         }
     }
+
 }

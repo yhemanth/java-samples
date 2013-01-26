@@ -17,8 +17,10 @@ public class MemoryMappedFileWriter implements MemoryMappedFileConstants {
         MappedByteBuffer buffer = file.getChannel().map(
                 FileChannel.MapMode.READ_WRITE, 0, WRITE_BLOCK_SIZE);
         Random random = new Random();
+        byte[] bytes = new byte[SIZE_OF_RECORD];
+        random.nextBytes(bytes);
         for (int i=0; i<NUMBER_OF_RECORDS; i++) {
-            new Record().write(buffer, random);
+            new Record(bytes).write(buffer);
         }
         file.close();
     }
