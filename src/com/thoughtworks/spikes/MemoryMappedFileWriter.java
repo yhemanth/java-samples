@@ -13,9 +13,9 @@ public class MemoryMappedFileWriter implements MemoryMappedFileConstants {
     }
 
     public void writeLargeFile() throws IOException {
-        RandomAccessFile file = new RandomAccessFile("/tmp/largefile.txt", "rw");
+        RandomAccessFile file = new RandomAccessFile(FILE_NAME, "rw");
         MappedByteBuffer buffer = file.getChannel().map(
-                FileChannel.MapMode.READ_WRITE, 0, SIZE_OF_RECORD * NUMBER_OF_RECORDS);
+                FileChannel.MapMode.READ_WRITE, 0, WRITE_BLOCK_SIZE);
         Random random = new Random();
         for (int i=0; i<NUMBER_OF_RECORDS; i++) {
             new Record().write(buffer, random);
