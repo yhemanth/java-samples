@@ -13,3 +13,7 @@ storm.local.mode.zmq: false
 storm.thrift.transport: "backtype.storm.security.auth.SimpleTransportPlugin"
 storm.messaging.transport: "backtype.storm.messaging.netty.Context"
 storm.meta.serialization.delegate: "backtype.storm.serialization.DefaultSerializationDelegate"
+dmp.kafkaspout:
+    dmp.kafkaspout.zookeeper.path: "/test"
+    dmp.kafkaspout.zookeeper.consumer.id: "123"
+    dmp.kafkaspout.fetch.buffer.size: 1234

@@ -16,10 +16,18 @@ public class SampleYamlConfigurator {
         InputStream resourceAsStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.yaml");
         Yaml yaml = new Yaml();
         Map<String, Object> configuration = (Map<String, Object>) yaml.load(resourceAsStream);
+        handleKeyValuePairs(configuration);
+    }
+
+    private void handleKeyValuePairs(Map<String, Object> configuration) {
         for (String key : configuration.keySet()) {
             Object value = configuration.get(key);
-            String configItem = String.format("%s -> %s [%s]", key, value, value.getClass().getName());
-            System.out.println(configItem);
+            if (value instanceof Map) {
+                handleKeyValuePairs((Map<String, Object>) value);
+            } else {
+                String configItem = String.format("%s -> %s [%s]", key, value, value.getClass().getName());
+                System.out.println(configItem);
+            }
         }
     }
 }
