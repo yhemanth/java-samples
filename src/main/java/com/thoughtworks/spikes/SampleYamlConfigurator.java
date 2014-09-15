@@ -17,7 +17,9 @@ public class SampleYamlConfigurator {
         Yaml yaml = new Yaml();
         Map<String, Object> configuration = (Map<String, Object>) yaml.load(resourceAsStream);
         for (String key : configuration.keySet()) {
-            System.out.println(key);
+            Object value = configuration.get(key);
+            String configItem = String.format("%s -> %s [%s]", key, value, value.getClass().getName());
+            System.out.println(configItem);
         }
     }
 }
