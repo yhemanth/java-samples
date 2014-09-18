@@ -3,6 +3,7 @@ package com.thoughtworks.spikes;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
 public class SampleYamlConfigurator {
@@ -24,6 +25,13 @@ public class SampleYamlConfigurator {
             Object value = configuration.get(key);
             if (value instanceof Map) {
                 handleKeyValuePairs((Map<String, Object>) value);
+            } else if (value instanceof List) {
+                List l = (List)value;
+                for (Object obj: l) {
+                    if (obj instanceof Map) {
+                        handleKeyValuePairs((Map<String, Object>) obj);
+                    }
+                }
             } else {
                 String configItem = String.format("%s -> %s [%s]", key, value, value.getClass().getName());
                 System.out.println(configItem);

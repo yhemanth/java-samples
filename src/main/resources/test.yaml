@@ -17,3 +17,7 @@ dmp.kafkaspout:
     dmp.kafkaspout.zookeeper.path: "/test"
     dmp.kafkaspout.zookeeper.consumer.id: "123"
     dmp.kafkaspout.fetch.buffer.size: 1234
+dmp.dedupebolt:
+    dmp.dedupebolt.redissettings: [{host: "hostname1", port: 1111}, {host: "hostname2", port: 1111}, {host: "hostname3", port: 1111}]
+    dmp.dedupebolt.lookupdb: {host: "lookuphost", port: 2222}
+    dmp.dedupebolt.rlookupdb: {host: "rlookuphost", port: 2222}
