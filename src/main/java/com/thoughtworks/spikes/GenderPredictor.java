@@ -83,13 +83,15 @@ public class GenderPredictor {
             for (String parameterType : parameters.keySet()) {
                 functionValue += getCoefficient(parameterType, parameters.get(parameterType));
             }
-            functionValue = (-1 * functionValue);
-            double inferredValue = (1.0 / (1.0 + (Math.exp(functionValue))) > THRESHOLD) ? 1.0 : 0.0;
-            inferredValue = inferredValue > THRESHOLD ? MALE_INDICATOR : FEMALE_INDICATOR;
+            double inferredValue = (logisticRegressionFunction(functionValue) > THRESHOLD) ? MALE_INDICATOR : FEMALE_INDICATOR;
 
             return (int)inferredValue;
         }
         catch(Exception e) {return -1;}
+    }
+
+    private double logisticRegressionFunction(double functionValue) {
+        return 1.0 / (1.0 + (Math.exp(-1 * functionValue)));
     }
 
     private double getCoefficient(String coefficientParamName, String coefficientType) {
