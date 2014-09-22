@@ -15,16 +15,18 @@ public class GenderPredictor {
         dict1 = new HashMap<String, Double>();
         String iss=paramsStr.trim();
         String st=iss.replace("]","").replace("[","");
-        String[] params=st.split("[:]");
-        for ( int i=0;i< params.length; i++){
-            String[]  kv=(params[i].trim()).split("[|]");
-            if (kv.length==2){
-                String k=kv[0].replace("', '","");
-                String v=kv[1].trim();
-                System.out.println(k+":"+v);
-                dict1.put(k,Double.parseDouble(v));
+        String[] params=st.split("',");
+        for (String param : params) {
+            String keyValue = param.trim().replace("'", "").replace(":", "");
+            String[] keyValueTokens = keyValue.split("[|]");
+            if (keyValueTokens.length == 2) {
+                System.out.println(keyValueTokens[0]+":"+keyValueTokens[1]);
+                dict1.put(keyValueTokens[0], Double.parseDouble(keyValueTokens[1]));
+            } else {
+                System.out.println("Invalid param: " + keyValue);
             }
         }
+        System.out.println("Size of dictionary: " + dict1.size());
         return 0;
     }
 
