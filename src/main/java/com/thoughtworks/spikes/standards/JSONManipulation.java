@@ -1,4 +1,4 @@
-package com.thoughtworks.spikes;
+package com.thoughtworks.spikes.standards;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

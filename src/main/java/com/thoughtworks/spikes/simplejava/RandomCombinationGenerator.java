@@ -1,4 +1,4 @@
-package com.thoughtworks.spikes;
+package com.thoughtworks.spikes.simplejava;
 
 import java.util.HashSet;
 import java.util.Random;

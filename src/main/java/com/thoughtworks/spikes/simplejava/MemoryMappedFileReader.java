@@ -1,6 +1,8 @@
-package com.thoughtworks.spikes;
+package com.thoughtworks.spikes.simplejava;
 
-import java.io.FileNotFoundException;
+import com.thoughtworks.spikes.simplejava.Record;
+import com.thoughtworks.spikes.simplejava.MemoryMappedFileConstants;
+
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
