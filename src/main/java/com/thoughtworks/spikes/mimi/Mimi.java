@@ -6,11 +6,8 @@ import java.io.InputStreamReader;
 
 public class Mimi {
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String s = bufferedReader.readLine();
-        while (s != null) {
-            System.out.println("Hello, " + s + "!");
-            s = bufferedReader.readLine();
-        }
+        String s = "f";
+        byte b = (byte) s.charAt(0);
+        System.out.println((char)b);
     }
 }
