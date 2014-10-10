@@ -1,4 +1,4 @@
-package com.thoughtworks.spikes.mimi;
+package com.dsinpractice.spikes.mimi;
 
 import java.io.BufferedReader;
 import java.io.IOException;

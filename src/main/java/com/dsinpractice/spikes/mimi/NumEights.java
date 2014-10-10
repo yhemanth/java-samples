@@ -1,4 +1,4 @@
-package com.thoughtworks.spikes.mimi;
+package com.dsinpractice.spikes.mimi;
 
 public class NumEights {
 

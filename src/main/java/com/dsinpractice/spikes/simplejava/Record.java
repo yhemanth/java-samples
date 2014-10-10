@@ -1,6 +1,6 @@
-package com.thoughtworks.spikes.simplejava;
+package com.dsinpractice.spikes.simplejava;
 
-import com.thoughtworks.spikes.simplejava.MemoryMappedFileConstants;
+import com.dsinpractice.spikes.simplejava.MemoryMappedFileConstants;
 
 import java.nio.MappedByteBuffer;
 

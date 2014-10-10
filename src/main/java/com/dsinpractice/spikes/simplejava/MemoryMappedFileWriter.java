@@ -1,6 +1,6 @@
-package com.thoughtworks.spikes.simplejava;
+package com.dsinpractice.spikes.simplejava;
 
-import com.thoughtworks.spikes.simplejava.Record;
+import com.dsinpractice.spikes.simplejava.Record;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

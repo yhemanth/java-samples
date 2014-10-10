@@ -1,4 +1,4 @@
-package com.thoughtworks.spikes.redis;
+package com.dsinpractice.spikes.redis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

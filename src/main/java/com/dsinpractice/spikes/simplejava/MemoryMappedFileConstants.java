@@ -1,4 +1,4 @@
-package com.thoughtworks.spikes.simplejava;
+package com.dsinpractice.spikes.simplejava;
 
 public interface MemoryMappedFileConstants {
     static final int NUMBER_OF_RECORDS = 1024 * 1024;

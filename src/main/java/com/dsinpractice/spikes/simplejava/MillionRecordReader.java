@@ -1,4 +1,4 @@
-package com.thoughtworks.spikes.simplejava;
+package com.dsinpractice.spikes.simplejava;
 
 import org.mapdb.DBMaker;
 
