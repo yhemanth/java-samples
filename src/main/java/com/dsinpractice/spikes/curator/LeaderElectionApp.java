@@ -71,6 +71,12 @@ public class LeaderElectionApp implements LeaderLatchListener {
     @Override
     public void isLeader() {
         LOG.info(String.format("App with ID %s is leader", id));
+        // do some work here..
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException ie) {
+            LOG.info("Exception while executing isLeader", ie);
+        }
     }
 
     @Override
