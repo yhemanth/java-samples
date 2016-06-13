@@ -31,8 +31,9 @@ public class KerberosAction {
         printUserInfo("Before login");
         Configuration conf = new Configuration();
         SecurityUtil.setAuthenticationMethod(KERBEROS, conf);
+        String serverPrincipal = SecurityUtil.getServerPrincipal(user, (String) null);
         UserGroupInformation.setConfiguration(conf);
-        UserGroupInformation.loginUserFromKeytab(user, keytabFilePath);
+        UserGroupInformation.loginUserFromKeytab(serverPrincipal, keytabFilePath);
         printUserInfo("After login");
     }
 
