@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Mimi {
     public static void main(String[] args) throws IOException {
-        String s = "g";
+        String s = "b";
         byte b = (byte) s.charAt(0);
         System.out.println((char)b);
     }
