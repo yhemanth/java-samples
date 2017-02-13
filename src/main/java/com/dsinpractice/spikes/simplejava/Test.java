@@ -8,7 +8,7 @@ public class Test {
         }
         StringBuilder sb = new StringBuilder();
         String x = "null";
-        StringBuilder helo = sb.append("helo").append(x);
-        System.out.println(helo.toString());
+        StringBuilder hello = sb.append("hello").append(x);
+        System.out.println(hello.toString());
     }
 }
