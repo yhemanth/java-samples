@@ -9,6 +9,6 @@ public class Test {
         StringBuilder sb = new StringBuilder();
         String x = "null";
         StringBuilder hello = sb.append("hello").append(x);
-        System.out.println(hello.toString());
+        System.out.println("Output: " + hello.toString());
     }
 }
