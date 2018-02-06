@@ -1,4 +1,4 @@
-package com.dsinpractice.spikes.kerberos;
+package com.dsinpractice.spikes.security;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.security.SecurityUtil;
